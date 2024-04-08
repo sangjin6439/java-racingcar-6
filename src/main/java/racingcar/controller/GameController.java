@@ -7,11 +7,10 @@ import racingcar.view.OutputView;
 
 import java.util.List;
 
-// 연결 다리
+
 public class GameController {
 
     private final Cars cars = new Cars();
-
 
     public void gameStart(){
        String[] carNames = InputView.inputCarName();

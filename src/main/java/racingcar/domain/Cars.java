@@ -6,7 +6,6 @@ import java.util.*;
 
 public class Cars {
 
-
     private List<Car> cars;
 
     private static final int FORWARD_NUM = 4;
@@ -26,11 +25,10 @@ public class Cars {
         return cars;
     }
 
-
     public void carForward() {
         for (Car car : cars) {
             if (createRandomNum() >= FORWARD_NUM) {
-                car.moveForward(); // position++;
+                car.moveForward();
             }
         }
     }
@@ -39,7 +37,8 @@ public class Cars {
         return Randoms.pickNumberInRange(0, 9);
     }
 
-    public List<String> findWinners() { // Cars carList
+
+    public List<String> findWinners() {
         int maxPosition = MINIMUM_POSITION;
         for (Car car : cars) {
             if (car.getPosition() > maxPosition) {
@@ -53,6 +52,6 @@ public class Cars {
             }
         }
         return winners;
-    }
 
+    }
 }
