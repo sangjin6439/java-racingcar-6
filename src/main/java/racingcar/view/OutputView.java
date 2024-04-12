@@ -8,27 +8,30 @@ import java.util.List;
 
 public class OutputView {
 
-    public static void outputMessage() {
+    public void outputMessage() {
         System.out.println("실행 결과");
     }
 
-    public static void showCar(Cars cars) {
+    public void showCar(Cars cars) {
         List<Car> participants = cars.getCars();
+        StringBuilder sb = new StringBuilder();
         for (Car car : participants) {
-            System.out.print(car.getName() + " : ");
-            showCarPosition(car);
+            sb.append(car.getName()).append(" : ");
+            sb.append(generateCarPosition(car)).append("\n");
         }
-        System.out.println();
+        System.out.println(sb.toString());
     }
 
-    public static void showCarPosition(Car car) {
+    public String generateCarPosition(Car car) {
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < car.getPosition(); i++) {
-            System.out.print("-");
+            sb.append("-");
         }
-        System.out.println();
+        return sb.toString();
     }
 
-    public static void printWinnerCars(List<String> winners) {
+
+    public void printWinnerCars(List<String> winners) {
         System.out.print("최종 우승자 : " + String.join(", ", winners));
 
     }

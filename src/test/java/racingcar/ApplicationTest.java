@@ -38,13 +38,11 @@ class ApplicationTest extends NsTest {
     void 우승자_리스트() {
 
         // given
-        Cars cars = new Cars();
-        cars.inputCarName(new String[]{"babo","baba","bobo"});
-
+        Cars cars = new Cars(new String[]{"babo","baba","bobo"});
         // when
         cars.getCars().get(0).moveForward();
         cars.getCars().get(2).moveForward();
-        List<String> winners = cars.findWinners();
+        List<String> winners = cars.findWinnerNameFromRacing();
         
         // then
         assertThat(winners).containsExactly("babo","bobo");

@@ -14,7 +14,8 @@ public class Cars {
         this.cars = new ArrayList<>();
     }
 
-    public void inputCarName(String[] carNames) {
+    public Cars(String[] carNames) {
+        this();
         for (String carName : carNames) {
             cars.add(new Car(carName));
         }
@@ -36,7 +37,7 @@ public class Cars {
         return Randoms.pickNumberInRange(0, 9);
     }
 
-    public List<String> findWinners() {
+    public List<String> findWinnerNameFromRacing() {
         int maxPosition = MINIMUM_POSITION;
         for (Car car : cars) {
             if (car.getPosition() > maxPosition) {

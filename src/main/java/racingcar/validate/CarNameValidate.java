@@ -2,7 +2,7 @@ package racingcar.validate;
 
 public class CarNameValidate {
 
-    public static void validateCarName(String[] carNames){
+    public static void validateCarNamesFromInput(String[] carNames){
 
         for (String carName : carNames) {
             if(carName.length() > 5){
